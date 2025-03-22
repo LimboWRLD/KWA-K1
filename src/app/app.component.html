@@ -1,0 +1,5 @@
+<div>
+  <app-dynamic-form [questions]="questions$ | async" [model]="selectedEntity" (submitEvent)="save($event)"></app-dynamic-form>
+  <app-search (keyInput)="onSearchTextChanged($event  )"></app-search>
+  <app-generic-table [data]="filteredListStudent" (removeEvent)="remove($event)" (editEvent)="edit($event)"></app-generic-table>
+</div>

@@ -1,0 +1,30 @@
+{
+  "students": [
+    {
+      "id": "bd49",
+      "ime": "axaw",
+      "smer": {
+        "id": 14,
+        "naziv": "IT"
+      }
+    },
+    {
+      "id": "f022",
+      "ime": "asdasd",
+      "smer": {
+        "id": 12,
+        "naziv": "SII"
+      }
+    },
+    {
+      "id": "109f",
+      "ime": "pETAR",
+      "smer": {
+        "id": 14,
+        "naziv": "IT"
+      },
+      "rodjenje": "2025-03-22",
+      "Golubovi": "15"
+    }
+  ]
+}
