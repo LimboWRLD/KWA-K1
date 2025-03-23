@@ -10,7 +10,7 @@
     <thead>
         <tr>
             @for (column of columns; track $index){
-                <td>{{column}}</td>
+                <td><button (click)="sort(column)">{{column}}</button></td>
             }
             <td>Actions</td>
         </tr>

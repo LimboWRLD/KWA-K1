@@ -12,3 +12,8 @@ thead{
     text-transform: capitalize;
     font-weight: bold;
 }
+
+thead button {
+  all: unset;
+  cursor: pointer;
+}

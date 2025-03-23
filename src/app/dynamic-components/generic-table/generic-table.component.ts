@@ -49,5 +49,24 @@ export class GenericTableComponent implements OnChanges {
     this.editEvent.emit(data);
   }
 
+  sortDirections: { [key: string]: 'asc' | 'desc' } = {};
+
+  sort(columnKey: string) {
+    this.sortDirections[columnKey] = this.sortDirections[columnKey] === 'asc' ? 'desc' : 'asc';
+
+    this.data = [...this.data].sort((a, b) => {
+      const valueA = a[columnKey];
+      const valueB = b[columnKey];
+
+      const direction = this.sortDirections[columnKey] === 'asc' ? 1 : -1;
+
+      if (typeof valueA === 'string' && typeof valueB === 'string') {
+        return direction * valueA.localeCompare(valueB);
+      } else {
+        return direction * (valueA - valueB);
+      }
+    });
+  }
+
   
 }

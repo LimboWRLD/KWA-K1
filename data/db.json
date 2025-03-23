@@ -1,3 +1,36 @@
 {
-  "students": []
+  "students": [
+    {
+      "id": "190c",
+      "ime": "Novi",
+      "smer": {
+        "id": 14,
+        "naziv": "IT"
+      }
+    },
+    {
+      "id": "9045",
+      "ime": "A",
+      "smer": {
+        "id": 12,
+        "naziv": "SII"
+      }
+    },
+    {
+      "id": "2552",
+      "ime": "B",
+      "smer": {
+        "id": 12,
+        "naziv": "SII"
+      }
+    },
+    {
+      "id": "fa0f",
+      "ime": "Z",
+      "smer": {
+        "id": 14,
+        "naziv": "IT"
+      }
+    }
+  ]
 }
