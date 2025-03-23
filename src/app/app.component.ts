@@ -60,6 +60,7 @@ export class AppComponent implements OnInit{
   remove(id:number): void{
     this.httpService.delete("students", id).subscribe(() => {
       this.data = this.data.filter(item => item.id !== id);
+      this.filteredListStudent = this.filteredListStudent.filter(item => item.id !== id);
     });
   }
 

@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { HighlightDirective } from '../../directives/highlight.directive';
+import { NoDataDirective } from '../../directives/no-data.directive';
 
 @Component({
   selector: 'app-generic-table',
-  imports: [HighlightDirective],
+  imports: [HighlightDirective, NoDataDirective],
   templateUrl: './generic-table.component.html',
   styleUrl: './generic-table.component.css',
   standalone:true

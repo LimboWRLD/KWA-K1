@@ -1,3 +1,11 @@
+<ng-template #praznaTabela>
+    <tbody>
+      <tr>
+        <td colspan="7">No data to load</td>
+      </tr>
+    </tbody>
+</ng-template>
+
 <table>
     <thead>
         <tr>
@@ -7,7 +15,7 @@
             <td>Actions</td>
         </tr>
     </thead>
-    <tbody>
+    <tbody *appNoData="data; template: praznaTabela">
         @for (row of data; track row.id){
             <tr [appHighlight]="row.id=='bd49'">
                 @for (column of columns; track $index){
@@ -21,3 +29,4 @@
         }
     </tbody>
 </table>
+
