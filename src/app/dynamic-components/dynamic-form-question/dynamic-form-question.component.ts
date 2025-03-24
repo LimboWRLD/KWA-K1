@@ -49,4 +49,14 @@ export class DynamicFormQuestionComponent {
     return outPut;
   }
 
+  
+  comparator(v1: any, v2: any) {
+    if(v1 && v2)
+    {
+      return v1["id"] == v2["id"]
+    } else {
+      return  v1 == v2
+    }
+  }
+
 }
