@@ -192,19 +192,36 @@ export class AppComponent implements OnInit{
     if (payload.id) {
       this.httpService.update<Transakcija>("transakcije", payload.id, payload)
         .subscribe(() => {
+          this.updateRacunStanje(payload);
           this.loadData();
           this.selectedTransakcija = {};
         });
     } else {
       this.httpService.create<Transakcija>("transakcije", {...payload})
         .subscribe(() => {
+          //otici u racun i izracunati novo stanje
+          this.updateRacunStanje(payload);
           this.loadData();
           this.selectedTransakcija = {};
         });
     }
   }
-  
 
+  updateRacunStanje(payload: any) {
+    const racunId = payload.racunId?.id ?? payload.racunId;
+
+    this.httpService.getById<Racun>(`racuni`,racunId)
+      .subscribe((racun) => {
+        let trenutnoStanje = typeof racun.stanje === "string" ? parseInt(racun.stanje, 10) : racun.stanje;
+
+        const iznos = typeof payload.iznos === "string" ? parseInt(payload.iznos, 10) : payload.iznos;
+
+        let novoStanje = trenutnoStanje + iznos;
+
+        this.httpService.update<Racun>("racuni", racunId, { ...racun, stanje: novoStanje })
+          .subscribe(() => console.log("Stanje računa ažurirano"));
+      });
+  }
 
   onKlijentSearchTextChanged(searchText: string) {
     if (!searchText) {
