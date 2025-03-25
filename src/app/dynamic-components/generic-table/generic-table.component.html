@@ -17,7 +17,7 @@
     </thead>
     <tbody *appNoData="data; template: praznaTabela">
         @for (row of data; track row.id){
-            <tr [appHighlight]="row.id=='bd49'">
+            <tr [appHighlight]="row.stanje! < 0">
                 @for (column of columns; track $index){
                     <td>{{getValue(row, column)}}</td>
                 }

@@ -1,5 +1,17 @@
 <div>
-  <app-dynamic-form [questions]="questions$ | async" [model]="selectedEntity" (submitEvent)="save($event)"></app-dynamic-form>
-  <app-search (keyInput)="onSearchTextChanged($event  )"></app-search>
-  <app-generic-table [data]="filteredListStudent" (removeEvent)="remove($event)" (editEvent)="edit($event)"></app-generic-table>
+  <app-dynamic-form [questions]="questionsRacun$ | async" [model]="selectedRacun" (submitEvent)="saveRacun($event)"></app-dynamic-form>
+  <app-search (keyInput)="onRacunSearchTextChanged($event  )"></app-search>
+  <app-generic-table [data]="filteredListRacun" (removeEvent)="removeRacun($event)" (editEvent)="editRacun($event)"></app-generic-table>
+</div>
+
+<div>
+  <app-dynamic-form [questions]="questionsKlijent$ | async" [model]="selectedKlijent" (submitEvent)="saveKlijent($event)"></app-dynamic-form>
+  <app-search (keyInput)="onKlijentSearchTextChanged($event  )"></app-search>
+  <app-generic-table [data]="filteredListKlijent" (removeEvent)="removeKlijent($event)" (editEvent)="editKlijent($event)"></app-generic-table>
+</div>
+
+<div>
+  <app-dynamic-form [questions]="questionsTransakcija$ | async" [model]="selectedTransakcija" (submitEvent)="saveTransakcija($event)"></app-dynamic-form>
+  <app-search (keyInput)="onTranskacijaSearchTextChanged($event  )"></app-search>
+  <app-generic-table [data]="filteredListTransakcija" (removeEvent)="removeTransakcija($event)" (editEvent)="editTransakcija($event)"></app-generic-table>
 </div>

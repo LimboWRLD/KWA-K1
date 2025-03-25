@@ -49,4 +49,10 @@ export class DynamicFormQuestionComponent {
     return outPut;
   }
 
+  comparator(v1: any, v2: any) {
+    console.log("V1 " +  JSON.stringify(v1))
+    console.log("V2 " + JSON.stringify(v2))
+    return v1==v2;
+  }
+  
 }
