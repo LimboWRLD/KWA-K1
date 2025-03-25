@@ -7,7 +7,7 @@
         } @case ('dropdown') {
           <select [id]="question.key" [formControlName]="question.key" [compareWith]="comparator">
           @for (opt of question.options; track opt) {
-            <option [ngValue]="opt">{{ opt.naziv }}</option>
+            <option [ngValue]="opt.id">{{ opt.naziv }}</option>
           }
           </select>
         }
